@@ -1,0 +1,202 @@
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mdist[92m[23m:[30m782][39m[1m - [22mW&B RUN: [1m[[22mkind-snowflake-[95m1[39m[1m]([22m[4mhttps://wandb.ai/alcf-ufert/WordPlay/runs/2ul2yok3)
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mdist[92m[23m:[30m810][39m[1m - [22mRunning on [3mmachine[23m=[3m'Polaris'
+[30m[[90m2024-04-02 20:55:55[30m][[93mWARNING[30m][[39m[3m__main__[92m[23m:[30m87][39m[1m - {
+    [3m"train"[23m: [1m{
+        [3m"framework"[23m: [3m"pytorch"[23m,
+        [3m"backend"[23m: [3m"DDP"[23m,
+        [3m"device"[23m: null,
+        [3m"seed"[23m: null,
+        [3m"port"[23m: null,
+        [3m"ds_config_path"[23m: null,
+        [3m"precision"[23m: null,
+        [3m"ngpus"[23m: null,
+        [3m"use_wandb"[23m: true,
+        [3m"eval_interval"[23m: [95m250[39m,
+        [3m"log_interval"[23m: [95m5[39m,
+        [3m"eval_iters"[23m: [95m200[39m,
+        [3m"eval_only"[23m: false,
+        [3m"always_save_checkpoint"[23m: false,
+        [3m"init_from"[23m: [3m"scratch"[23m,
+        [3m"wandb_project"[23m: [3m"WordPlay"[23m,
+        [3m"max_iters"[23m: [95m100[39m,
+        [3m"warmup_iters"[23m: [95m100[39m,
+        [3m"dtype"[23m: [3m"bfloat16"[23m,
+        [3m"compile"[23m: false
+    [1m}[22m,
+    [3m"model"[23m: [1m{
+        [3m"n_layer"[23m: [95m6[39m,
+        [3m"n_head"[23m: [95m6[39m,
+        [3m"n_embd"[23m: [95m384[39m,
+        [3m"batch_size"[23m: [95m64[39m,
+        [3m"block_size"[23m: [95m256[39m,
+        [3m"activation"[23m: [3m"gelu"[23m,
+        [3m"dropout"[23m: [95m0.2[39m,
+        [3m"bias"[23m: false,
+        [3m"vocab_size"[23m: [95m65
+    [1m}[22m,
+    [3m"data"[23m: [1m{
+        [3m"dataset"[23m: [3m"shakespeare_char"[23m,
+        [3m"out_dir"[23m: [3m"out-shakespeare-char"[23m,
+        [3m"root_path"[23m: null
+    [1m}[22m,
+    [3m"optimizer"[23m: [1m{
+        [3m"gas"[23m: [95m1[39m,
+        [3m"name"[23m: [3m"AdamW"[23m,
+        [3m"learning_rate"[23m: [95m0.001[39m,
+        [3m"weight_decay"[23m: [95m0.1[39m,
+        [3m"beta1"[23m: [95m0.9[39m,
+        [3m"beta2"[23m: [95m0.99[39m,
+        [3m"grad_clip"[23m: [95m1.0[39m,
+        [3m"decay_lr"[23m: true,
+        [3m"lr_decay_iters"[23m: [95m5000[39m,
+        [3m"min_lr"[23m: [95m0.0001
+    [1m}
+[1m}
+[30m[[90m2024-04-02 20:55:55[30m][[93mWARNING[30m][[39m[3m__main__[92m[23m:[30m88][39m[1m - [22mOutput dir: [32m/home/julian_ufert/wordplay/src/outputs/runs/shakespeare/pytorch/DDP/2024-04-02/[35m20-55-50
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m227][39m[1m - [22mInitializing a new model from scratch
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mmodel[92m[23m:[30m255][39m[1m - [22mnumber of parameters: [95m10.[39m65M
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mmodel[92m[23m:[30m445][39m[1m - [22mnum decayed parameter tensors: [95m26[39m, with [95m10[39m,[95m740[39m,[95m096[39m parameters
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mmodel[92m[23m:[30m449][39m[1m - [22mnum non-decayed parameter tensors: [95m13[39m, with [95m4[39m,[95m992[39m parameters
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mINFO[30m[22m][[39m[3mmodel[92m[23m:[30m465][39m[1m - [22musing fused AdamW: [3mTrue
+[30m[[90m2024-04-02 20:55:55[30m][[39m[1mCRITICAL[30m[22m][[39m[3mtrainer[92m[23m:[30m296][39m[1m - [22m[3m"devid='cuda:0'"
+[30m[[90m2024-04-02 20:55:58[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m333][39m[1m - [22m• self.[3mmodel[23m=[1mGPT(
+  [1m([22mtransformer[1m)[22m: [1mModuleDict(
+    [1m([22mwte[1m)[22m: [1mEmbedding([95m[22m65[39m, [95m384[39m[1m)
+    [1m([22mwpe[1m)[22m: [1mEmbedding([95m[22m256[39m, [95m384[39m[1m)
+    [1m([22mdrop[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+    [1m([22mh[1m)[22m: [1mModuleList(
+      [1m([95m[22m0[39m-[95m5[39m[1m)[22m: [95m6[39m x [1mBlock(
+        [1m([22mln_1[1m)[22m: [1mLayerNorm()
+        [1m([22mattn[1m)[22m: [1mCausalSelfAttention(
+          [1m([22mc_attn[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m1152[39m, [3mbias[23m=[3mFalse[1m[23m)
+          [1m([22mc_proj[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m384[39m, [3mbias[23m=[3mFalse[1m[23m)
+          [1m([22mattn_dropout[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+          [1m([22mresid_dropout[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+        [1m)
+        [1m([22mln_2[1m)[22m: [1mLayerNorm()
+        [1m([22mmlp[1m)[22m: [1mMLP(
+          [1m([22mc_fc[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m1536[39m, [3mbias[23m=[3mFalse[1m[23m)
+          [1m([22mact_fn[1m)[22m: [1mGELU([22m[3mapproximate[23m=[3m'none'[1m[23m)
+          [1m([22mc_proj[1m)[22m: [1mLinear([22m[3min_features[23m=[95m1536[39m, [3mout_features[23m=[95m384[39m, [3mbias[23m=[3mFalse[1m[23m)
+          [1m([22mdropout[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+        [1m)
+      [1m)
+    [1m)
+    [1m([22mln_f[1m)[22m: [1mLayerNorm()
+  [1m)
+  [1m([22mlm_head[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m65[39m, [3mbias[23m=[3mFalse[1m[23m)
+[1m)
+[30m[[90m2024-04-02 20:55:58[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m334][39m[1m - [22m• self.[3mgrad_scaler[23m=[1m<torch.cuda.amp.grad_scaler.GradScaler[22m object at [95m0x14e9df990820[39m[1m>
+[30m[[90m2024-04-02 20:55:58[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m335][39m[1m - [22m• self.[3mmodel_engine[23m=[1mDistributedDataParallel(
+  [1m([22mmodule[1m)[22m: [1mGPT(
+    [1m([22mtransformer[1m)[22m: [1mModuleDict(
+      [1m([22mwte[1m)[22m: [1mEmbedding([95m[22m65[39m, [95m384[39m[1m)
+      [1m([22mwpe[1m)[22m: [1mEmbedding([95m[22m256[39m, [95m384[39m[1m)
+      [1m([22mdrop[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+      [1m([22mh[1m)[22m: [1mModuleList(
+        [1m([95m[22m0[39m-[95m5[39m[1m)[22m: [95m6[39m x [1mBlock(
+          [1m([22mln_1[1m)[22m: [1mLayerNorm()
+          [1m([22mattn[1m)[22m: [1mCausalSelfAttention(
+            [1m([22mc_attn[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m1152[39m, [3mbias[23m=[3mFalse[1m[23m)
+            [1m([22mc_proj[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m384[39m, [3mbias[23m=[3mFalse[1m[23m)
+            [1m([22mattn_dropout[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+            [1m([22mresid_dropout[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+          [1m)
+          [1m([22mln_2[1m)[22m: [1mLayerNorm()
+          [1m([22mmlp[1m)[22m: [1mMLP(
+            [1m([22mc_fc[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m1536[39m, [3mbias[23m=[3mFalse[1m[23m)
+            [1m([22mact_fn[1m)[22m: [1mGELU([22m[3mapproximate[23m=[3m'none'[1m[23m)
+            [1m([22mc_proj[1m)[22m: [1mLinear([22m[3min_features[23m=[95m1536[39m, [3mout_features[23m=[95m384[39m, [3mbias[23m=[3mFalse[1m[23m)
+            [1m([22mdropout[1m)[22m: [1mDropout([22m[3mp[23m=[95m0.2[39m, [3minplace[23m=[3mFalse[1m[23m)
+          [1m)
+        [1m)
+      [1m)
+      [1m([22mln_f[1m)[22m: [1mLayerNorm()
+    [1m)
+    [1m([22mlm_head[1m)[22m: [1mLinear([22m[3min_features[23m=[95m384[39m, [3mout_features[23m=[95m65[39m, [3mbias[23m=[3mFalse[1m[23m)
+  [1m)
+[1m)
+[30m[[90m2024-04-02 20:55:58[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m336][39m[1m - [22m• self.[3moptimizer[23m=[95mAdamW[39m [1m(
+Parameter Group [95m0
+    amsgrad: [3mFalse
+    betas: [1m([95m[22m0.9[39m, [95m0.99[39m[1m)
+    capturable: [3mFalse
+    differentiable: [3mFalse
+    eps: [95m1e-08
+    foreach: [3mNone
+    fused: [3mTrue
+    lr: [95m0.001
+    maximize: [3mFalse
+    weight_decay: [95m0.1
+Parameter Group [95m1
+    amsgrad: [3mFalse
+    betas: [1m([95m[22m0.9[39m, [95m0.99[39m[1m)
+    capturable: [3mFalse
+    differentiable: [3mFalse
+    eps: [95m1e-08
+    foreach: [3mNone
+    fused: [3mTrue
+    lr: [95m0.001
+    maximize: [3mFalse
+    weight_decay: [95m0.0
+[1m)
+[30m[[90m2024-04-02 20:55:58[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m769][39m[1m - [22mStartup time: [95m7.4162
+                              Training Legend
+┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃    abbr    ┃ desc                                                        ┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│    step    │ Current training iteration                                  │
+│    loss    │ Loss value                                                  │
+│     dt     │ Elapsed time per training step (measured in **ms**)         │
+│    dtf     │ Elapsed time per forward step (measured in **ms**)          │
+│    dtb     │ Elapsed time per backward step (measured in **ms**)         │
+│    sps     │ Samples per second                                          │
+│    mtps    │ Tokens per second, measured in MEGA (1 x 10^6) tokens / sec │
+│    mfu     │ Model flops utilization                                     │
+│ train_loss │ Training loss value                                         │
+│  val_loss  │ Validation loss value                                       │
+└────────────┴─────────────────────────────────────────────────────────────┘
+  0%|          | 0/100 [00:00<?, ?it/s]
+
+ 11%|█         | 11/100 [00:05<00:16,  5.37it/s]
+[30m[[90m2024-04-02 20:56:02[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m5[39m [3mloss[23m=[95m3.6917[39m [3mdt[23m=[95m118.6674[39m [3mdtf[23m=[95m4.6371[39m [3mdtb[23m=[95m111.3416[39m [3msps[23m=[95m67.4153[39m [3mmtps[23m=[95m1.1045[39m [3mmfu[23m=[95m-100.0000[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:03[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m10[39m [3mloss[23m=[95m3.2985[39m [3mdt[23m=[95m90.3541[39m [3mdtf[23m=[95m4.5643[39m [3mdtb[23m=[95m83.7005[39m [3msps[23m=[95m88.5406[39m [3mmtps[23m=[95m1.4506[39m [3mmfu[23m=[95m4.1240[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:03[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m15[39m [3mloss[23m=[95m2.9891[39m [3mdt[23m=[95m92.3922[39m [3mdtf[23m=[95m4.6130[39m [3mdtb[23m=[95m85.6577[39m [3msps[23m=[95m86.5874[39m [3mmtps[23m=[95m1.4186[39m [3mmfu[23m=[95m4.1149[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+
+ 33%|███▎      | 33/100 [00:07<00:06, 10.28it/s]
+[30m[[90m2024-04-02 20:56:04[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m25[39m [3mloss[23m=[95m2.6753[39m [3mdt[23m=[95m115.8099[39m [3mdtf[23m=[95m4.4487[39m [3mdtb[23m=[95m109.3641[39m [3msps[23m=[95m69.0787[39m [3mmtps[23m=[95m1.1318[39m [3mmfu[23m=[95m4.0817[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:05[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m30[39m [3mloss[23m=[95m2.6314[39m [3mdt[23m=[95m102.1408[39m [3mdtf[23m=[95m4.3998[39m [3mdtb[23m=[95m94.8398[39m [3msps[23m=[95m78.3232[39m [3mmtps[23m=[95m1.2832[39m [3mmfu[23m=[95m4.0384[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:05[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m35[39m [3mloss[23m=[95m2.5650[39m [3mdt[23m=[95m114.1281[39m [3mdtf[23m=[95m4.5014[39m [3mdtb[23m=[95m107.5466[39m [3msps[23m=[95m70.0967[39m [3mmtps[23m=[95m1.1485[39m [3mmfu[23m=[95m3.9610[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+
+ 53%|█████▎    | 53/100 [00:09<00:04, 10.00it/s]
+[30m[[90m2024-04-02 20:56:06[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m45[39m [3mloss[23m=[95m2.5357[39m [3mdt[23m=[95m105.4604[39m [3mdtf[23m=[95m4.5327[39m [3mdtb[23m=[95m98.8475[39m [3msps[23m=[95m75.8578[39m [3mmtps[23m=[95m1.2429[39m [3mmfu[23m=[95m4.0839[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:07[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m50[39m [3mloss[23m=[95m2.5024[39m [3mdt[23m=[95m86.9717[39m [3mdtf[23m=[95m4.5157[39m [3mdtb[23m=[95m79.6237[39m [3msps[23m=[95m91.9839[39m [3mmtps[23m=[95m1.5071[39m [3mmfu[23m=[95m4.1040[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:07[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m55[39m [3mloss[23m=[95m2.4967[39m [3mdt[23m=[95m125.2781[39m [3mdtf[23m=[95m4.5495[39m [3mdtb[23m=[95m118.6318[39m [3msps[23m=[95m63.8579[39m [3mmtps[23m=[95m1.0462[39m [3mmfu[23m=[95m3.9910[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+
+ 73%|███████▎  | 73/100 [00:11<00:02,  9.22it/s]
+[30m[[90m2024-04-02 20:56:08[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m65[39m [3mloss[23m=[95m2.4780[39m [3mdt[23m=[95m92.6267[39m [3mdtf[23m=[95m4.5149[39m [3mdtb[23m=[95m85.3020[39m [3msps[23m=[95m86.3682[39m [3mmtps[23m=[95m1.4151[39m [3mmfu[23m=[95m3.9246[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:09[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m70[39m [3mloss[23m=[95m2.4559[39m [3mdt[23m=[95m96.2773[39m [3mdtf[23m=[95m4.5597[39m [3mdtb[23m=[95m89.6583[39m [3msps[23m=[95m83.0933[39m [3mmtps[23m=[95m1.3614[39m [3mmfu[23m=[95m3.9192[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:09[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m75[39m [3mloss[23m=[95m2.4442[39m [3mdt[23m=[95m115.5904[39m [3mdtf[23m=[95m4.5125[39m [3mdtb[23m=[95m108.3149[39m [3msps[23m=[95m69.2099[39m [3mmtps[23m=[95m1.1339[39m [3mmfu[23m=[95m3.8497[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:10[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m80[39m [3mloss[23m=[95m2.4527[39m [3mdt[23m=[95m97.7230[39m [3mdtf[23m=[95m5.3223[39m [3mdtb[23m=[95m89.2789[39m [3msps[23m=[95m81.8640[39m [3mmtps[23m=[95m1.3413[39m [3mmfu[23m=[95m3.8460[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+
+ 94%|█████████▍| 94/100 [00:13<00:00, 10.67it/s]
+[30m[[90m2024-04-02 20:56:11[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m90[39m [3mloss[23m=[95m2.4502[39m [3mdt[23m=[95m105.7770[39m [3mdtf[23m=[95m4.4159[39m [3mdtb[23m=[95m99.3644[39m [3msps[23m=[95m75.6308[39m [3mmtps[23m=[95m1.2391[39m [3mmfu[23m=[95m4.0391[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+[30m[[90m2024-04-02 20:56:11[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m837][39m[1m - [22m[3mstep[23m=[95m95[39m [3mloss[23m=[95m2.4116[39m [3mdt[23m=[95m76.0412[39m [3mdtf[23m=[95m4.5665[39m [3mdtb[23m=[95m68.6743[39m [3msps[23m=[95m105.2061[39m [3mmtps[23m=[95m1.7237[39m [3mmfu[23m=[95m4.1253[39m [3mtrain_loss[23m=[95m4.3081[39m [3mval_loss[23m=[95m4.3019
+
+100%|██████████| 100/100 [00:13<00:00,  7.16it/s]
+[30m[[90m2024-04-02 20:56:13[30m][[39m[1mINFO[30m[22m][[39m[3m__main__[92m[23m:[30m113][39m[1m - [[22m[3m'prompt'[1m[23m][22m: [3m'What is an LLM?'
+[30m[[90m2024-04-02 20:56:13[30m][[39m[1mINFO[30m[22m][[39m[3m__main__[92m[23m:[30m114][39m[1m - [[22m[3m'response'[1m[23m][22m:
+What is an LLM?
+Thellingely,
+MEONESTIUS:
+Thay shesull my hen hatoumathig t te, ar, arare
+Thin, whind
+Fon ar t y asandighe ourn. arthot bande at tera lourd yo me indesershasher.
+ANOLAUTENCI:
+ILARO:
+Bouso timyourdayouse s, tou p
+Bu irs have ys cthas
+Fomanceanduterend t
+[30m[[90m2024-04-02 20:56:13[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m735][39m[1m - [22mSaving checkpoint to: [32m/home/julian_ufert/wordplay/src/outputs/runs/shakespeare/pytorch/DDP/2024-04-02/[35m20-55-50
+[30m[[90m2024-04-02 20:56:13[30m][[39m[1mINFO[30m[22m][[39m[3mtrainer[92m[23m:[30m736][39m[1m - [22mSaving model to: [32m/home/julian_ufert/wordplay/src/outputs/runs/shakespeare/pytorch/DDP/2024-04-02/20-55-50/[35mmodel.pth
+[30m[[90m2024-04-02 20:56:13[30m][[39m[1mINFO[30m[22m][[39m[3mconfigs[92m[23m:[30m141][39m[1m - [22mAppending [32m/home/julian_ufert/wordplay/src/outputs/runs/shakespeare/pytorch/DDP/2024-04-02/[35m20-55-50[39m to [32m/home/julian_ufert/wordplay/src/ckpts/[35mcheckpoints.log
